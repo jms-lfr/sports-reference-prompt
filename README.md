@@ -1,0 +1,9 @@
+## Sports Reference Engineering Internship Prompt
+
+I decided to use Python to complete this exercise. I took the provided json data and stored it in the ```DATA``` variable, which I was able to utilize as a dictionary. Then, in the main function, I looped through each key in the dictionary. On the first loop, the team column labels are printed. Next, for every team, I got the nested json data (stored in ```x```). After printing the row label, I looped through each key in the dictionary again. In a try/except block, I got the win data for each key, which would then be printed. This would throw an exception if the key didn't exist, which, with this dataset, would be when the key of the inner loop matched the key of the outer loop. I caught the exception and printed "--" instead of a win count. After printing the win total against every team, I printed a new line and checked if it was the last run of the loop. If it was, I printed the team column labels again. Otherwise, the loop would continue.  
+
+I realized that I could've used an if/else statement, but the thought of using try/except came to me first and worked, so I left it.  
+I originally hardcoded my solution to work with three letter abbreviations, but decided to change it so it would work correctly for more rarely used team abbreviations like "SF" or "NATS" that aren't three letters. First, I used the ```printLabes()``` to print each column label and return the length of the longest label, which I used to indent the row labels with string multiplication. In the main loop, I multiplied " " with the difference of the ```longest``` variable and the length of the key the loop was on (```len(key)```). I right aligned the win values similarly, using the length of the key minus the length of the ```wins``` string.  
+
+!["SF"](https://i.imgur.com/9KsC34B.png) !["NATS"](https://i.imgur.com/cYmZQmz.png)
+
